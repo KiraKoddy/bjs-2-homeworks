@@ -24,7 +24,7 @@ Student.prototype.addMarks = function (...marks) {
   if (this.marks === undefined) {
     this.marks = marks;
   } else {
-    this.marks = this.marks.push(...marks);
+    this.marks.push(...marks);
   }
 }
 
@@ -32,12 +32,8 @@ Student.prototype.getAverage = function () {
   let sum = 0;
   if (this.marks === undefined) {
     return 0;
-  } else {
-    for (let i = 0; i < this.marks.length; i++) {
-      sum += this.marks[i];
-    }
-    return sum / this.marks.length;
   }
+  return sum / this.marks.length;
 }
 
 Student.prototype.exclude = function (reason) {
