@@ -12,24 +12,31 @@ Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 }
 
+Student.prototype.addMark = function (mark) {
+  if (this.marks === undefined) {
+    this.marks = [mark];
+  } else {
+    this.marks.push(mark);
+  }
+}
+
 Student.prototype.addMarks = function (...marks) {
   if (this.marks === undefined) {
     this.marks = marks;
   } else {
-    this.marks = this.marks.concat(...marks);
+    this.marks = this.marks.push(...marks);
   }
 }
 
 Student.prototype.getAverage = function () {
   let sum = 0;
   if (this.marks === undefined) {
-    return "Нет оценок"
+    return 0;
   } else {
-    for (i = 0; i < this.marks.length; i++) {
+    for (let i = 0; i < this.marks.length; i++) {
       sum += this.marks[i];
     }
-    this.average = sum / this.marks.length;
-    return this.average;
+    return sum / this.marks.length;
   }
 }
 
