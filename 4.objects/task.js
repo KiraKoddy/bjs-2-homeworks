@@ -32,8 +32,7 @@ Student.prototype.getAverage = function () {
   let sum = 0;
   if (this.marks === undefined) {
     return 0;
-  } else {
-  }
+  } 
   for (let i = 0; i < this.marks.length; i++) {
     sum += this.marks[i];
   }
